@@ -13,11 +13,11 @@ fn main() {
 	fn eq(xs: &List, ys: &List) -> bool {
 		match (xs, ys) {
 			(&Nil, &Nil)
-				=> true,
+			    => true,
 
 			(&Cons(x, box ref next_xs), &Cons(y, box ref next_ys))
 			if x == y
-				=> eq(next_xs, next_ys),
+			    => eq(next_xs, next_ys),
 
 			_   => false,
 		}

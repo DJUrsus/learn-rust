@@ -13,11 +13,11 @@ fn main() {
 	fn eq<T: PartialEq>(xs: &List<T>, ys: &List<T>) -> bool {
 		match (xs, ys) {
 			(&Nil, &Nil)
-				=> true,
+			    => true,
 
 			(&Cons(ref x, box ref next_xs), &Cons(ref y, box ref next_ys))
 			if x == y
-				=> eq(next_xs, next_ys),
+			    => eq(next_xs, next_ys),
 
 			_   => false,
 		}
