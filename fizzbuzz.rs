@@ -5,13 +5,10 @@ fn main() {
 }
 
 fn fizzbuzz(num: int) -> String {
-	if num % 15 == 0 {
-		format!("FizzBuzz")
-	} else if num % 5 == 0 {
-		format!("Buzz")
-	} else if num % 3 == 0 {
-		format!("Fizz")
-	} else {
-		format!("{}", num)
+	match (num % 3, num % 5) {
+		(0, 0) => format!("FizzBuzz"),
+		(0, _) => format!("Fizz"),
+		(_, 0) => format!("Buzz"),
+		(_, _) => format!("{}", num),
 	}
 }
