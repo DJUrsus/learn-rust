@@ -8,3 +8,5 @@ https://andrewlorente.com/learning_rust
 syntax10.rs).
 
 - [x] I have written two FizzBuzz implementations (they run interleaved).
+
+- [ ] I am reading sections 11-19
