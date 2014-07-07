@@ -1,23 +1,20 @@
 use std::iter::range_inclusive;
+use std::num::FromPrimitive;
+use std::fmt::Show;
 
 fn main() {
-	for num in range_inclusive(1i, 100) {
-		println!("{}\t{}", fizzbuzz_match(num), fizzbuzz_concat(num))
+	for num in range_inclusive(1u, 100) {
+		println!("{}", fizzbuzz(num))
 	}
 }
 
-fn fizzbuzz_match(num: int) -> String {
-	match (num % 3, num % 5) {
-		(0, 0) => format!("FizzBuzz"),
-		(0, _) => format!("Fizz"),
-		(_, 0) => format!("Buzz"),
-		(_, _) => format!("{}", num),
-	}
-}
-
-fn fizzbuzz_concat(num: int) -> String {
+fn fizzbuzz<T: Int + FromPrimitive + Show>(num: T) -> String {
 	let text = format!("{}{}",
-	                   if num % 3 == 0 {"Fizz"} else {""},
-	                   if num % 5 == 0 {"Buzz"} else {""});
-	if text.len() > 0 {text} else {format!("{}", num)}
+	                   if num % u(3) == u(0) {"Fizz"} else {""},
+	                   if num % u(5) == u(0) {"Buzz"} else {""});
+	return if text.len() > 0 {text} else {format!("{}", num)};
+}
+
+fn u<T: FromPrimitive>(num: uint) -> T {
+	FromPrimitive::from_uint(num).unwrap()
 }
