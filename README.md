@@ -7,6 +7,6 @@ https://andrewlorente.com/learning_rust
 - [x] I have read sections 1-10 (see hello.rs, enum-struct-tuple.rs, list*.rs, and
 syntax10.rs).
 
-- [x] I have written two FizzBuzz implementations &mdash; a fast one and a flexible one.
+- [x] I have written three FizzBuzz implementations &mdash; a flexible one, one based on an iterator, and a simple one.
 
-- [ ] I am reading sections 11-19
+- [ ] I am reading sections 11-19, but I am behind schedule.
