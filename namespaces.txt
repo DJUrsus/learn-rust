@@ -1,0 +1,31 @@
+crates
+single unit of compilation - single invocation of rustc
+results in either lib or exe
+
+modules
+namespaces
+crate root: implicit mod, named ::
+each mod is exactly one of the following:
+	internal mod: mod foo { vars, funcs }
+	external mod defined by file: foo.rs
+	external mod defined by directory: foo/mod.rs
+import external mod: mod foo;
+only modules defined by directories can *contain* external mods
+pub mod { ... } to make a mod visible outside its parent mod
+
+`use`
+a use statement takes a name and imports the last element of the name into the local namespace
+    there is an import namespace and a local namespace for each context; use adds to the import namespace
+if the name is global (i.e., starts with ::), the path starts at the crate root
+super and self are virtual modules referring to .. and .
+import multiple names:
+use farm::{chicken, cow};
+rename on import:
+use egg_layer = farm::chicken;
+pub use foo; to make name visible outside containing mod
+
+`extern crate`
+an extern crate statement takes a crate name and searches for that crate, which must be compiled
+the crate root module is imported using the crate name
+extern crate foo;
+use foo::bar;

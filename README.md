@@ -9,4 +9,4 @@ syntax10.rs).
 
 - [x] I have written three FizzBuzz implementations &mdash; a flexible one, one based on an iterator, and a simple one.
 
-- [ ] I am reading sections 11-19, but I am behind schedule.
+- [x] I have rad sections 11-19.
